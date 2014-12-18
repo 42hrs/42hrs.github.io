@@ -37,3 +37,4 @@ DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['extra/CNAME', ]
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
+THEME = "/home/thecoder/sandbox/hacks/42hrs.github.io/themes/bs3"
