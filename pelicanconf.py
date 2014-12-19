@@ -37,4 +37,14 @@ DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['extra/CNAME', ]
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
+
+
+# THEME SETTINGS
 THEME = "/home/thecoder/sandbox/hacks/42hrs.github.io/themes/bs3"
+BOOTSTRAP_THEME = "simplex"
+HIDE_SIDEBAR = True
+SHOW_ARTICLE_CATEGORY  = False
+# THEME SETTINGS END
+
+LOAD_CONTENT_CACHE = False
+MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc(permalink=True)', ]
