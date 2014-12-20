@@ -163,7 +163,7 @@ $ git commit -m "Wrote my first article with Pelican"
 ## Publishing to GitHub
 
 The final step is to publish the HTML pages to GitHub. The current branch is `source` but the HTML files need to be committed
-   to the `master` branch. The following command creates the HTML files, commit them to `master` and pushes it to GitHub.
+   to the `master` branch. The following command creates the HTML files, commits them to `master` and pushes it to GitHub.
 ```
 $ make publish github
 ```
