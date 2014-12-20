@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>42HOURS.IN</title><link href="http://blog.42hrs.in/" rel="alternate"></link><link href="http://blog.42hrs.in/feeds/all.atom.xml" rel="self"></link><id>http://blog.42hrs.in/</id><updated>2014-12-10T00:00:00+01:00</updated><entry><title>Blogging with Markdown, Pelican and GitHub pages: Part 1</title><link href="http://blog.42hrs.in/blogging-with-markdown-pelican-and-github-pages-part-1.html" rel="alternate"></link><updated>2014-12-10T00:00:00+01:00</updated><author><name>42hrs.in</name></author><id>tag:blog.42hrs.in,2014-12-10:blogging-with-markdown-pelican-and-github-pages-part-1.html</id><summary type="html">&lt;p&gt;Pelican is a static site generator. It accepts lightly formatted plain text files, like 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>42HRS.IN</title><link href="http://blog.42hrs.in/" rel="alternate"></link><link href="http://blog.42hrs.in/feeds/all.atom.xml" rel="self"></link><id>http://blog.42hrs.in/</id><updated>2014-12-10T00:00:00+01:00</updated><entry><title>Blogging with Markdown, Pelican and GitHub pages: Part 1</title><link href="http://blog.42hrs.in/blogging-with-markdown-pelican-and-github-pages-part-1.html" rel="alternate"></link><updated>2014-12-10T00:00:00+01:00</updated><author><name>42hrs.in</name></author><id>tag:blog.42hrs.in,2014-12-10:blogging-with-markdown-pelican-and-github-pages-part-1.html</id><summary type="html">&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#basics"&gt;Basics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#groundwork"&gt;Groundwork&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#github-repository-and-branches"&gt;GitHub repository and branches&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#installation"&gt;Installation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#pelican-quickstart"&gt;Pelican Quickstart&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#writing-content"&gt;Writing content&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#viewing-in-browser"&gt;Viewing in browser&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#publishing-to-github"&gt;Publishing to GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#writing-more-articles"&gt;Writing more articles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="basics"&gt;Basics&lt;a class="headerlink" href="#basics" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; is a static site generator. It accepts lightly formatted plain text files, like 
    &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; or &lt;a href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt;,
    and generate static pages which can be hosted almost everywhere. If you have a GitHub profile, you can write articles at
    the comfort of your favorite IDE and publish them on &lt;a href="https://pages.github.com/"&gt;GitHub pages&lt;/a&gt; with couple of commands.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;This is pretty much what happens:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;You write articles to &lt;code&gt;content/&lt;/code&gt; subdirectory.&lt;/li&gt;
+&lt;li&gt;Write articles to &lt;code&gt;content/&lt;/code&gt; subdirectory.&lt;/li&gt;
 &lt;li&gt;Pelican reads &lt;code&gt;content/&lt;/code&gt; and outputs HTML pages to &lt;code&gt;output/&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Files in &lt;code&gt;output/&lt;/code&gt; are published on GitHub&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="groundwork"&gt;Groundwork&lt;a class="headerlink" href="#groundwork" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Install Python and PIP&lt;/p&gt;
+&lt;p&gt;At the time of the writing, Python 2.7.x is recommended for Pelican. If you don't have PIP setup, head over to 
+   &lt;a href="https://pip.pypa.io/en/latest/installing.html"&gt;this link&lt;/a&gt; for installation instructions.&lt;/p&gt;
+&lt;p&gt;I use virtualenvwrapper to create environments, and installation instructions can be found &lt;a href="http://virtualenvwrapper.readthedocs.org/en/latest/install.html"&gt;here&lt;/a&gt; &lt;/p&gt;
 &lt;h2 id="github-repository-and-branches"&gt;GitHub repository and branches&lt;a class="headerlink" href="#github-repository-and-branches" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Pages on GitHub are nothing but HTML and static files residing inside a repository. The repo has to follow the naming convention
-   &lt;code&gt;&amp;lt;your-username&amp;gt;.github.io&lt;/code&gt;. My username is &lt;code&gt;42hrs&lt;/code&gt; and hence &lt;code&gt;42hrs.github.io&lt;/code&gt; should be the name of this repo.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Instructions to create the repo goes here&lt;/em&gt;&lt;/p&gt;
+   &lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt;. My username is &lt;code&gt;42hrs&lt;/code&gt; and hence &lt;code&gt;42hrs.github.io&lt;/code&gt; should be the name of this repo.&lt;/p&gt;
+&lt;p&gt;Create a new repo at &lt;a href="https://github.com/new"&gt;https://github.com/new&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;After everything's done &lt;a href="http://42hrs.github.io"&gt;http://42hrs.github.io&lt;/a&gt; is where this blog would live (I've setup 
    a custom domain, but more on that later). Github looks for the HTML files at the root of the &lt;code&gt;master&lt;/code&gt; branch of this repo.&lt;/p&gt;
 &lt;p&gt;Now, clone the repository.&lt;/p&gt;
@@ -25,7 +41,7 @@
 
 &lt;p&gt;One of GitHub's rules is that HTML pages have to reside at the root of the &lt;code&gt;master&lt;/code&gt; branch of your repository. But Pelican 
    outputs the HTML to a subdirectory &lt;code&gt;output/&lt;/code&gt; and also has other type of files at the root. So that's not acceptable.&lt;/p&gt;
-&lt;p&gt;Forget about &lt;code&gt;master&lt;/code&gt; for the timebeing, and create and checkout a new branch, &lt;code&gt;source&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Forget about &lt;code&gt;master&lt;/code&gt; for the timebeing, and create and checkout a new branch named &lt;code&gt;source&lt;/code&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout -b &lt;span class="nb"&gt;source&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -38,7 +54,6 @@
 
 
 &lt;h2 id="installation"&gt;Installation&lt;a class="headerlink" href="#installation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Virtualenv is not necessary, but is recommended. &lt;em&gt;I'm also using Virtualenvwrapper.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Create a new environment, and install the required packages.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkvirtualenv pelican
 &lt;span class="nv"&gt;$ &lt;/span&gt;workon pelican
@@ -50,22 +65,102 @@
 &lt;h2 id="pelican-quickstart"&gt;Pelican Quickstart&lt;a class="headerlink" href="#pelican-quickstart" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Pelican comes with a handy command &lt;code&gt;pelican-quickstart&lt;/code&gt; which sets up a complete project for your blog based on answers to 
    a few questions.&lt;/p&gt;
-&lt;p&gt;Make sure you do &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican quickstart
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2 id="writing-content"&gt;Writing content&lt;a class="headerlink" href="#writing-content" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;touch content/hello-world.md
+&lt;p&gt;Mostly I chose the default options, but remember to say yes to the following questions.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&amp;gt; Where do you want to create your new web site? [.] .
+...
+&amp;gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n) y
+&amp;gt; Do you want an auto-reload &amp;amp; simpleHTTP script to assist with theme and site development? (Y/n) y
+...
+&amp;gt; Do you want to upload your website using GitHub Pages? (y/N) y
+&amp;gt; Is this your personal page (username.github.io)? (y/N) y 
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;Now Pelican will have setup a project inside the current directory with the following files.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;tree
+.
+&lt;span class="p"&gt;|&lt;/span&gt;-- content/
+&lt;span class="p"&gt;|&lt;/span&gt;-- develop_server.sh
+&lt;span class="p"&gt;|&lt;/span&gt;-- fabfile.py
+&lt;span class="p"&gt;|&lt;/span&gt;-- Makefile
+&lt;span class="p"&gt;|&lt;/span&gt;-- output/
+&lt;span class="p"&gt;|&lt;/span&gt;-- pelicanconf.py
+ -- publishconf.py
+
+&lt;span class="m"&gt;2&lt;/span&gt; directories, &lt;span class="m"&gt;5&lt;/span&gt; files
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;A blog has been setup, but without any content. Commit everything to git before writing the first article.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git add -A
+&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -m &lt;span class="s2"&gt;&amp;quot;Successfully setup a Pelican project&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="writing-content"&gt;Writing content&lt;a class="headerlink" href="#writing-content" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I write in Markdown, and pelican considers each &lt;code&gt;.md&lt;/code&gt; file inside &lt;code&gt;content/&lt;/code&gt; as a different article.  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;nano content/hello-world.md
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Every article needs some metadata. &lt;code&gt;title&lt;/code&gt; and &lt;code&gt;date&lt;/code&gt; are mandatory, the rest are optional but recommended&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;My&lt;/span&gt; &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;article&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;
+&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;
+&lt;span class="n"&gt;Modified&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2010&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;05&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;
+&lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;
+&lt;span class="n"&gt;Tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;publishing&lt;/span&gt;
+&lt;span class="n"&gt;Slug&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;first&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;article&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;with&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pelican&lt;/span&gt;
+&lt;span class="n"&gt;Authors&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;My&lt;/span&gt; &lt;span class="n"&gt;Name&lt;/span&gt;
+&lt;span class="n"&gt;Summary&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Short&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;feeds&lt;/span&gt;
+
+&lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;article&lt;/span&gt; &lt;span class="n"&gt;goes&lt;/span&gt; &lt;span class="n"&gt;here&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Save the file and close the editor.&lt;/p&gt;
 &lt;h2 id="viewing-in-browser"&gt;Viewing in browser&lt;a class="headerlink" href="#viewing-in-browser" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To convert the markdown files into HTML, use the following command.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;make html
-&lt;span class="nv"&gt;$ &lt;/span&gt;make devserver
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pelican comes with a way to easily run a local server on your PC. Following command serves the site for preview on the
+   at http://localhost:8000.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;make serve
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To avoid typing the above two commands after every time you need to preview a change in your article, pelican has another
+handy command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt; make devserver
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This watches the files and automatically refreshes the server every time there is change in the articles.&lt;/p&gt;
+&lt;p&gt;When satisfied with the article, do a git commit.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git add -A
+&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -m &lt;span class="s2"&gt;&amp;quot;Wrote my first article with Pelican&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2 id="publishing-to-github"&gt;Publishing to GitHub&lt;a class="headerlink" href="#publishing-to-github" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The final step is to publish the HTML pages to GitHub. The current branch is &lt;code&gt;source&lt;/code&gt; but the HTML files need to be committed
+   to the &lt;code&gt;master&lt;/code&gt; branch. The following command creates the HTML files, commits them to &lt;code&gt;master&lt;/code&gt; and pushes it to GitHub.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;make publish github
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="blogging"></category><category term="pelican"></category><category term="markdown"></category><category term="github-pages"></category></entry></feed>
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Go to &lt;a href="http://42hrs.github.io"&gt;42hrs.github.io&lt;/a&gt; to view the published blog. There can be a slight delay before GitHub makes it live.&lt;/p&gt;
+&lt;h2 id="writing-more-articles"&gt;Writing more articles&lt;a class="headerlink" href="#writing-more-articles" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To write a new article and publish it on GitHub, follow these steps&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git checkout source&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a new markdown file in &lt;code&gt;content/&lt;/code&gt; with metadata and content&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make devserver&lt;/code&gt; to preview locally&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git commit -am "Finished another article"&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make publish github&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</summary><category term="blogging"></category><category term="pelican"></category><category term="markdown"></category><category term="github-pages"></category></entry></feed>

@@ -31,6 +31,13 @@ a:hover {
     font-size: 1.6em;
     line-height: 1.5em;
 }
+
+.tc-content-container p {
+    margin-bottom: 10px;
+}
+code {
+    font-size: 70%;
+}
 .tc-xbold {
     font-weight: 800;
 }
@@ -54,4 +61,12 @@ a:hover {
 .post-info {
     margin-bottom: 2em;
     font-family: 'Open Sans', sans-serif;
+}
+.toc ul {
+
+}
+.toc ul li {
+    list-style-type: circle;
+    list-style-type: decimal;
+    list-style-type: lower-roman;
 }
