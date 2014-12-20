@@ -3,6 +3,9 @@ Date: 2014-12-10 00:00
 Tags: blogging, pelican, markdown, github-pages
 Summary: Quick and Easy way of getting started with Pelican and GitHub pages
 
+[TOC]
+
+## Basics
 
 [Pelican] is a static site generator. It accepts lightly formatted plain text files, like 
    [Markdown] or [reStructuredText],
@@ -58,8 +61,6 @@ $ git branch
 
 
 ## Installation
-
-Virtualenv is not necessary, but is recommended.
 
 Create a new environment, and install the required packages.
 ```
@@ -176,7 +177,8 @@ To write a new article and publish it on GitHub, follow these steps
 1. `git checkout source`
 2. Create a new markdown file in `content/` with metadata and content
 3. `make devserver` to preview locally
-4. `make publish github`
+4. `git commit -am "Finished another article"`
+5. `make publish github`
 
 
 
