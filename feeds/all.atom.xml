@@ -161,6 +161,6 @@ handy command.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;git checkout source&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Create a new markdown file in &lt;code&gt;content/&lt;/code&gt; with metadata and content&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make devserver&lt;/code&gt; to preview locally&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git commit -am "Finished another article"&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add -A &amp;amp;&amp;amp; git commit -m "Finished another article"&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make publish github&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;</summary><category term="blogging"></category><category term="pelican"></category><category term="markdown"></category><category term="github-pages"></category></entry></feed>
