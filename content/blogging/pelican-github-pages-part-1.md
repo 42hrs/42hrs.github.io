@@ -177,7 +177,7 @@ To write a new article and publish it on GitHub, follow these steps
 1. `git checkout source`
 2. Create a new markdown file in `content/` with metadata and content
 3. `make devserver` to preview locally
-4. `git commit -am "Finished another article"`
+4. `git add -A && git commit -m "Finished another article"`
 5. `make publish github`
 
 

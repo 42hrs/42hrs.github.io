@@ -40,7 +40,7 @@ EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
 
 # THEME SETTINGS
-THEME = "/home/thecoder/sandbox/hacks/42hrs.github.io/themes/bs3"
+THEME = "themes/bs3"
 BOOTSTRAP_THEME = "simplex"
 HIDE_SIDEBAR = True
 SHOW_ARTICLE_CATEGORY  = False
@@ -48,3 +48,25 @@ SHOW_ARTICLE_CATEGORY  = False
 
 LOAD_CONTENT_CACHE = False
 MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc(permalink=True)', ]
+
+PLUGIN_PATHS = ['plugins']
+PLUGINS = []
+
+
+# PLUGIN SITEMAP SETTINGS
+PLUGINS += ['sitemap']
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.7,
+        'indexes': 0.5,
+        'pages': 0.5
+    },
+    'changefreqs': {
+        'articles': 'daily',
+        'indexes': 'daily',
+        'pages': 'monthly'
+    }
+}
+# PLUGIN SITEMAP SETTINGS END
+
